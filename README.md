@@ -24,7 +24,10 @@ This project demonstrates how to set up and securely connect an **Amazon RDS Pos
 - Configured **subnets** (public and private) and assigned proper **routing tables**.  
 - Enabled **Internet Gateway** for external access to EC2.  
 
-📸 **(screenshot of VPC/subnet setup in AWS Console)**  
+📸![VPC/subnet setup in AWS Console](Screenshots/public-subnets.png) 
+*Configured route table and internet gateways for public subnets*  
+📸![VPC/subnet setup in AWS Console](Screenshots/private-subnets.png) 
+*Configured route table and NAT gateways for private subnets*  
 
 ---
 
@@ -32,7 +35,8 @@ This project demonstrates how to set up and securely connect an **Amazon RDS Pos
 - Created an **EC2 instance** (Amazon Linux 2) in the public subnet.  
 - Configured SSH access via a **public security group** allowing port **22 (SSH)** and **80 (HTTP)**.  
 
-📸 **(screenshot of EC2 instance running in AWS Console)**  
+📸 ![EC2 Instance Created](Screenshots/ec2-instance.png) 
+*EC2 instance running in AWS Console*  
 
 ---
 
@@ -41,7 +45,8 @@ This project demonstrates how to set up and securely connect an **Amazon RDS Pos
 - Configured RDS in a **private subnet** for security.  
 - Created a **security group** allowing access **only from the EC2 instance**.  
 
-📸 **(screenshot of RDS instance running in AWS Console)**  
+📸 ![RDS Instance Created](Screenshots/rds-database.png)
+*RDS instance created and running*  
 
 ---
 
@@ -49,7 +54,11 @@ This project demonstrates how to set up and securely connect an **Amazon RDS Pos
 ✅ **EC2 Security Group**: Added **PostgreSQL (port 5432)** inbound rule with the source as the **RDS security group**.  
 ✅ **RDS Security Group**: Allowed **PostgreSQL (port 5432)** inbound connections **only from the EC2 security group**.  
 
-📸 **(screenshot of security group rules in AWS Console)**  
+📸![Private Security Group inbound rules](Screenshots/pvt-sg-rules.png) 
+*Security group for rds with inbound rules*  
+
+📸![Public Security Group inbound rules](Screenshots/pub-sg-rules.png) 
+*Security group for ec2 with inbound rules*  
 
 ---
 
@@ -64,43 +73,57 @@ sudo dnf install -y postgresql
 # Verify installation
 psql --version
 ```
-Connecting to RDS from EC2
+### 6️⃣ Connecting to RDS from EC2
 ```sh
 # Connect to PostgreSQL RDS instance
 psql -h <RDS_ENDPOINT> -p 5432 -U postgres -d postgres
 ```
 🔹 Successfully logged into PostgreSQL RDS ✅
 
-📸 (screenshot of successful connection to RDS from EC2 terminal)
 
-7️⃣ Verifying Database Connection
+### 7️⃣ Verifying Database Connection
 Inside the PostgreSQL prompt (psql), run:
 
 ```sh
 \l  -- List all databases
 SELECT version();  -- Check PostgreSQL version
 ```
-📸 (screenshot of database list and PostgreSQL version)
+📸![Successful RDS to EC2 Connection](Screenshots/rds-ec2-sync.png) 
+*Successful connection to RDS from EC2 terminal and database list and PostgreSQL version*
 
-🔐 Security Best Practices Implemented
+---
+
+## 🔐 Security Best Practices Implemented
 ✅ RDS in a private subnet (not publicly accessible)
+
 ✅ Security groups with least privilege access
+
 ✅ IAM roles and permissions for EC2 access
+
 ✅ Encrypted database connections (TLS enabled)
 
-📚 Key Learnings & Takeaways
+## 📚 Key Learnings & Takeaways
+
 🚀VPC & Networking: Subnet design, security groups, routing
+
 🚀Database Administration: PostgreSQL on AWS RDS
+
 🚀Linux & CLI Operations: SSH, installing & configuring services
+
 🚀Cloud Security: Private database access, IAM policies
 
-📝 Next Steps & Improvements
+## 📝 Next Steps & Improvements
+
 🔹 Automate EC2 & RDS setup using Terraform or AWS CloudFormation
+
 🔹 Deploy a web application (e.g., Flask/Django) that interacts with the database
+
 🔹 Set up CloudWatch monitoring & automated backups for RDS
 
-🏆 About Me
-🚀 Aspiring DevOps & Cloud Engineer passionate about AWS, Infrastructure as Code, and automation. Seeking opportunities in Cloud/DevOps Engineering.
+## 🏆 About Me
+
+🚀 Aspiring DevOps & Cloud Engineer passionate about AWS, Infrastructure 
+as Code, and automation. Seeking opportunities in Cloud/DevOps Engineering.
 
 🔗 LinkedIn Profile:[https://www.linkedin.com/in/dhwarakesh-srinivasan-361719292](https://www.linkedin.com/in/dhwarakesh-srinivasan-361719292)
 📧 Email: [dhwarakesh99@gmail.com](dhwarakesh99@gmail.com)
