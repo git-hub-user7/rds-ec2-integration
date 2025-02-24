@@ -1,4 +1,4 @@
-# 🏗 AWS RDS with EC2 Integration – Cloud & DevOps Project  
+# 🏗 AWS RDS with EC2 Integration – Cloud & DevOps Project
 
 ## 📌 Project Overview  
 This project demonstrates how to set up and securely connect an **Amazon RDS PostgreSQL database** with an **EC2 instance** inside a custom **VPC**. The goal is to simulate a real-world cloud environment by implementing **security best practices, networking configurations, and database connectivity**.
@@ -14,9 +14,6 @@ This project demonstrates how to set up and securely connect an **Amazon RDS Pos
 
 ---
 
-
----
-
 ## 🚀 Project Steps  
 
 ### **1️⃣ Setting Up the Custom VPC & Networking**  
@@ -25,7 +22,10 @@ This project demonstrates how to set up and securely connect an **Amazon RDS Pos
 - Enabled **Internet Gateway** for external access to EC2.  
 
 📸![VPC/subnet setup in AWS Console](Screenshots/public-subnets.png) 
-*Configured route table and internet gateways for public subnets*  
+*Configured route table and internet gateways for public subnets* 
+
+---
+
 📸![VPC/subnet setup in AWS Console](Screenshots/private-subnets.png) 
 *Configured route table and NAT gateways for private subnets*  
 
@@ -57,6 +57,8 @@ This project demonstrates how to set up and securely connect an **Amazon RDS Pos
 📸![Private Security Group inbound rules](Screenshots/pvt-sg-rules.png) 
 *Security group for rds with inbound rules*  
 
+---
+
 📸![Public Security Group inbound rules](Screenshots/pub-sg-rules.png) 
 *Security group for ec2 with inbound rules*  
 
@@ -73,6 +75,8 @@ sudo dnf install -y postgresql
 # Verify installation
 psql --version
 ```
+---
+
 ### 6️⃣ Connecting to RDS from EC2
 ```sh
 # Connect to PostgreSQL RDS instance
@@ -80,6 +84,7 @@ psql -h <RDS_ENDPOINT> -p 5432 -U postgres -d postgres
 ```
 🔹 Successfully logged into PostgreSQL RDS ✅
 
+---
 
 ### 7️⃣ Verifying Database Connection
 Inside the PostgreSQL prompt (psql), run:
@@ -88,6 +93,9 @@ Inside the PostgreSQL prompt (psql), run:
 \l  -- List all databases
 SELECT version();  -- Check PostgreSQL version
 ```
+
+---
+
 📸![Successful RDS to EC2 Connection](Screenshots/rds-ec2-sync.png) 
 *Successful connection to RDS from EC2 terminal and database list and PostgreSQL version*
 
