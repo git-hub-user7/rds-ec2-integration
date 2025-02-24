@@ -55,12 +55,12 @@ This project demonstrates how to set up and securely connect an **Amazon RDS Pos
 ✅ **RDS Security Group**: Allowed **PostgreSQL (port 5432)** inbound connections **only from the EC2 security group**.  
 
 📸![Private Security Group inbound rules](Screenshots/pvt-sg-rules.png) 
-*Security group for rds with inbound rules*  
+*Security group for RDS instance with inbound rules*  
 
 ---
 
 📸![Public Security Group inbound rules](Screenshots/pub-sg-rules.png) 
-*Security group for ec2 with inbound rules*  
+*Security group for EC2 instance with inbound rules*  
 
 ---
 
@@ -97,7 +97,7 @@ SELECT version();  -- Check PostgreSQL version
 ---
 
 📸![Successful RDS to EC2 Connection](Screenshots/rds-ec2-sync.png) 
-*Successful connection to RDS from EC2 terminal and database list and PostgreSQL version*
+*Successful connection to RDS instance from EC2 terminal and database list and PostgreSQL version*
 
 ---
 
