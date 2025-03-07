@@ -135,4 +135,4 @@ as Code, and automation. Seeking opportunities in Cloud/DevOps Engineering.
 
 🔗 LinkedIn Profile:[https://www.linkedin.com/in/dhwarakesh-srinivasan-361719292](https://www.linkedin.com/in/dhwarakesh-srinivasan-361719292)
 
-📧 Email: [dhwarakesh99@gmail.com](dhwarakesh99@gmail.com)
+📧 Email: `dhwarakesh99@gmail.com`
