@@ -1,4 +1,4 @@
-# 🏗 AWS RDS with EC2 Integration – Cloud & DevOps Project
+# 🏗 AWS RDS with EC2 Integration
 
 ## 📌 Project Overview  
 This project demonstrates how to set up and securely connect an **Amazon RDS PostgreSQL database** with an **EC2 instance** inside a custom **VPC**. The goal is to simulate a real-world cloud environment by implementing **security best practices, networking configurations, and database connectivity**.
